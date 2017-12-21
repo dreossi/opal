@@ -24,7 +24,7 @@ validation_size = 0.2
 img_size = 128
 num_channels = 3
 train_path='./data/train/'
-check_point_name = 'pero-model'
+check_point_name = '/Users/tommasodreossi/opal/pero-model'
 
 # Load training and validation images and labels
 data = dataset.read_train_sets(train_path, img_size, classes, validation_size=validation_size)
