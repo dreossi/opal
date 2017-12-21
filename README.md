@@ -32,9 +32,14 @@ easy_install -U pip
 pip install --upgrade tensorflow 
 ```
 
-## Run demo
+## Demo
 
-Run the following commadn
+Make sure that the virtual environment is activated
+``` sh
+source ~/tensorflow/bin/activate 
+```
+
+Run the following command
 ``` sh
 python demo.py -i targetImage
 ```
