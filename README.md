@@ -32,4 +32,19 @@ easy_install -U pip
 pip install --upgrade tensorflow 
 ```
 
+## Run demo
+
+Run the following commadn
+``` sh
+python demo.py -i targetImage
+```
+where *targetImage* is the path to a grape leaf image to be classified. 
+For instance
+``` sh
+python demo.py -i ./data/test/1.jpg
+Bad 99.9998688698 %
+Good 0.000135660138767 %
+```
+The tool returns the probabilty for the leaf to be affected by peronospora disease.
+In this case, 99.9998% of being sick (Bad) and 0.0001% of beging healthy (Good).
 
