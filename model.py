@@ -1,7 +1,8 @@
 import tensorflow as tf
 import numpy as np
-import os,glob,cv2
+import os,glob
 import sys,argparse
+from PIL import Image
 
 
 class Model:
@@ -27,7 +28,10 @@ class Model:
         image_size = 128
         num_channels = 3
         images = []
-        image = cv2.resize(image, (image_size, image_size), cv2.INTER_LINEAR)
+        #image = cv2.resize(image, (image_size, image_size), cv2.INTER_LINEAR)
+        pix = Image.fromarray(image, 'RGB')
+        pix = pix.resize((image_size, image_size), Image.ANTIALIAS)
+        image = np.array(pix)
 
         images.append(image)
         images = np.array(images, dtype=np.uint8)

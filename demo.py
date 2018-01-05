@@ -4,7 +4,8 @@ import sys, getopt
 
 import tensorflow as tf
 from model import Model
-import cv2
+#import cv2
+import matplotlib.image as mpimg
 
 graph_path = 'pero-model.meta'
 checkpoints_path = './'
@@ -13,7 +14,8 @@ def run_demo(image_path):
     with tf.Session() as sess:
         nn = Model()
         nn.init(graph_path, checkpoints_path, sess)
-        image = cv2.imread(image_path)
+        #image = cv2.imread(image_path)
+        image = mpimg.imread(image_path)
         bad, good = nn.predict(image)[0]
         print 'Bad', str(bad*100), '%'
         print 'Good', str(good*100), '%'
